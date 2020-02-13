@@ -130,8 +130,8 @@ var inventory = [
   * NOTE: This example has been completed for you.
 **/
 function get3rdCar(inventory) {
-  const the3rd = inventory.find((item, index) => {
-    return index === 2 // we use 2 because index is zero-based.
+  const the3rd = inventory.find((item, i) => {
+    return i === 2 // we use 2 because i is zero-based.
   })
   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
 }
@@ -142,20 +142,20 @@ function get3rdCar(inventory) {
 
 
 /**
- * ### Challenge `getCarInfoByIndex`
+ * ### Challenge `getCarInfoByi`
  * 
  * @instructions
- * getCarInfoByIndex takes two arguments:
+ * getCarInfoByi takes two arguments:
  *     (1) an array which is an inventory of cars like the preview above (see ⭐️ Preview Test Data ⭐️)
- *     (2) a number which is the desired index in the array.
- * getCarInfoByIndex returns a string in the format `This is a {car_make} {car_model}`
+ *     (2) a number which is the desired i in the array.
+ * getCarInfoByi returns a string in the format `This is a {car_make} {car_model}`
  * 
- * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
+ * For example, if getCarInfoByi is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
+function getCarInfoByi(inventory, i) {
   /* code here */
-  return `this is a ${inventory[index].car_make} ${inventory[index].car_model}`
+  return `this is a ${inventory[i].car_make} ${inventory[i].car_model}`
 }
 
 /**
@@ -169,8 +169,9 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
+function getLastCarInfo(carInv) {
   /* code here */
+  return `This is a ${carInv[carInv.length-1].car_make} ${carInv[carInv.length-1].car_model}`
 }
 
 /**
@@ -185,8 +186,16 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(carInv1, num1) {
   /* code here */
+  // const idCar = carInv1.find((item, i) => {
+  //   return i ===  // we use 2 because i is zero-based.
+  // })
+  for (let i = 0; i<carInv1.length; i++){
+    if (carInv1[i].id == num1){
+      return `This is a ${carInv1[i].car_make} ${carInv1[i].car_model}`;
+  }
+  }
 }
 
 /**
@@ -197,8 +206,10 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
+function sortCarInventory(carInv2) {
   /* code here */
+  carInv2.sort((a, b) => (a.car_model > b.car_model) ? 1: -1 );
+  // return carInv2.sort(carInv2.car_model);
 }
 
 /**
@@ -296,7 +307,7 @@ if (typeof exports !== 'undefined') {
   if (getName) { module.exports.getName = getName }
   if (makeSmartPerson) { module.exports.makeSmartPerson = makeSmartPerson }
   if (carMaker) { module.exports.carMaker = carMaker }
-  if (getCarInfoByIndex) { module.exports.getCarInfoByIndex = getCarInfoByIndex }
+  if (getCarInfoByi) { module.exports.getCarInfoByi = getCarInfoByi }
   if (getLastCarInfo) { module.exports.getLastCarInfo = getLastCarInfo }
   if (getCarInfoById) { module.exports.getCarInfoById = getCarInfoById }
   if (sortCarInventory) { module.exports.sortCarInventory = sortCarInventory }
