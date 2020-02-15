@@ -153,7 +153,7 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoBy is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoBy(inventory, i) {
+function getCarInfoByIndex(inventory, i) {
   /* code here */
   return `this is a ${inventory[i].car_make} ${inventory[i].car_model}`
 }
@@ -186,7 +186,7 @@ function getLastCarInfo(carInv) {
  * For example, if getCarInfoByd is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByd(carInv1, num1) {
+function getCarInfoById(carInv1, num1) {
   /* code here */
   // const idCar = carInv1.find((item, i) => {
   //   return i ===  // we use 2 because i is zero-based.
@@ -254,17 +254,8 @@ function getModelYears(inventory) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(inventory, maxYear) {
+function getOlderCars(/* code here */) {
   /* code here */
-  const oldCarsArr = [];
-
-  for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i].car_year <= maxYear){
-      oldCarsArr.push(inventory[i]);
-    }
-  }
-
-  return oldCarsArr;
 }
 
 /**
@@ -278,23 +269,8 @@ function getOlderCars(inventory, maxYear) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(inventory) {
+function getGermanCars(/* code here */) {
   /* code here */
-  const germanCarsArr = [];
-
-  for (let i = 0; i < inventory.length; i ++) {
-    if (inventory[i].car_make == 'Audi') {
-      germanCarsArr.push(inventory[i]);
-    } else if (inventory[i].car_make == 'Mercedes-Benz') {
-      germanCarsArr.push(inventory[i]);
-    } else if (inventory[i].car_make == 'Volkswagen') {
-      germanCarsArr.push(inventory[i]);
-    } else if (inventory[i].car_make == 'BMW') {
-      germanCarsArr.push(inventory[i]);
-    }
-  }
-
-  return germanCarsArr;
 }
 
 /**
@@ -315,9 +291,9 @@ function getGermanCars(inventory) {
  *   return num * 2
  * }
 */
-const sum = (a, b) => (a + b); // code here!
-const addFive = (num) => (num + 5); // code here!
-const argTimesTwo = (num) => (num * 2); // code here!
+const sum = null; // code here!
+const addFive = null; // code here!
+const argTimesTwo = null; // code here!
 
 /**
  * ### Challenge `carMaker`
@@ -348,9 +324,9 @@ if (typeof exports !== 'undefined') {
   if (getName) { module.exports.getName = getName }
   if (makeSmartPerson) { module.exports.makeSmartPerson = makeSmartPerson }
   if (carMaker) { module.exports.carMaker = carMaker }
-  if (getCarInfoBy) { module.exports.getCarInfoBy = getCarInfoBy }
+  if (getCarInfoByIndex) { module.exports.getCarInfoBy = getCarInfoByIndex }
   if (getLastCarInfo) { module.exports.getLastCarInfo = getLastCarInfo }
-  if (getCarInfoByd) { module.exports.getCarInfoByd = getCarInfoByd }
+  if (getCarInfoById) { module.exports.getCarInfoByd = getCarInfoById }
   if (sortCarInventory) { module.exports.sortCarInventory = sortCarInventory }
   if (getModelYears) { module.exports.getModelYears = getModelYears }
   if (getOlderCars) { module.exports.getOlderCars = getOlderCars }
