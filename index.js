@@ -153,7 +153,7 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByi is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByi(inventory, i) {
+function getCarInfoByIndex(inventory, i) {
   /* code here */
   return `this is a ${inventory[i].car_make} ${inventory[i].car_model}`
 }
@@ -254,8 +254,15 @@ function getModelYears(inventory) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
+function getOlderCars(inventory, maxYear) {
   /* code here */
+  let oldCars = [];
+  for (let index in inventory){
+    if (inventory[index].car_year <= maxYear){
+      oldCars.push(inventory[index])
+    } 
+  }
+  return oldCars
 }
 
 /**
@@ -269,8 +276,21 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(inventory) {
+  let germanCars = [];
+
+  for (let index in inventory){
+    if(inventory[index].car_make == 'Audi') {
+      germanCars.push(inventory[index]) 
+    } else if (inventory[index].car_make == 'Mercedes-Benz') {
+      germanCars.push(inventory[index])
+    } else if (inventory[index].car_make == 'Volkswagen') {
+      germanCars.push(inventory[index])
+    } else if (inventory[index].car_make == 'BMW') {
+      germanCars.push(inventory[index])
+    }
+  }
+  return germanCars;
 }
 
 /**
@@ -291,9 +311,9 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => (a+b); // code here!
+const addFive = (num) => (num + 5); // code here!
+const argTimesTwo = (num) => (num * 2); // code here!
 
 /**
  * ### Challenge `carMaker`
@@ -324,7 +344,7 @@ if (typeof exports !== 'undefined') {
   if (getName) { module.exports.getName = getName }
   if (makeSmartPerson) { module.exports.makeSmartPerson = makeSmartPerson }
   if (carMaker) { module.exports.carMaker = carMaker }
-  if (getCarInfoByi) { module.exports.getCarInfoByi = getCarInfoByi }
+  if (getCarInfoByIndex) { module.exports.getCarInfoByIndex = getCarInfoByIndex }
   if (getLastCarInfo) { module.exports.getLastCarInfo = getLastCarInfo }
   if (getCarInfoById) { module.exports.getCarInfoById = getCarInfoById }
   if (sortCarInventory) { module.exports.sortCarInventory = sortCarInventory }
