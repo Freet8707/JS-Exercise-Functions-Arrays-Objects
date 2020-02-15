@@ -142,18 +142,18 @@ function get3rdCar(inventory) {
 
 
 /**
- * ### Challenge `getCarInfoByi`
+ * ### Challenge `getCarInfoBy`
  * 
  * @instructions
- * getCarInfoByi takes two arguments:
+ * getCarInfoBy takes two arguments:
  *     (1) an array which is an inventory of cars like the preview above (see ⭐️ Preview Test Data ⭐️)
  *     (2) a number which is the desired i in the array.
- * getCarInfoByi returns a string in the format `This is a {car_make} {car_model}`
+ * getCarInfoBy returns a string in the format `This is a {car_make} {car_model}`
  * 
- * For example, if getCarInfoByi is invoked with the inventory and the number 0,
+ * For example, if getCarInfoBy is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByi(inventory, i) {
+function getCarInfoBy(inventory, i) {
   /* code here */
   return `this is a ${inventory[i].car_make} ${inventory[i].car_model}`
 }
@@ -175,18 +175,18 @@ function getLastCarInfo(carInv) {
 }
 
 /**
- * ### Challenge `getCarInfoById`
+ * ### Challenge `getCarInfoByd`
  * 
  * @instructions
- * getCarInfoById takes two arguments:
+ * getCarInfoByd takes two arguments:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  *     (2) a number which is the desired car id (see how each car has its own unique id).
- * getCarInfoById returns a string in the format `This is a {car_make} {car_model}
+ * getCarInfoByd returns a string in the format `This is a {car_make} {car_model}
  * 
- * For example, if getCarInfoById is invoked with the inventory and the number 1,
+ * For example, if getCarInfoByd is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(carInv1, num1) {
+function getCarInfoByd(carInv1, num1) {
   /* code here */
   // const idCar = carInv1.find((item, i) => {
   //   return i ===  // we use 2 because i is zero-based.
@@ -348,9 +348,9 @@ if (typeof exports !== 'undefined') {
   if (getName) { module.exports.getName = getName }
   if (makeSmartPerson) { module.exports.makeSmartPerson = makeSmartPerson }
   if (carMaker) { module.exports.carMaker = carMaker }
-  if (getCarInfoByi) { module.exports.getCarInfoByi = getCarInfoByi }
+  if (getCarInfoBy) { module.exports.getCarInfoBy = getCarInfoBy }
   if (getLastCarInfo) { module.exports.getLastCarInfo = getLastCarInfo }
-  if (getCarInfoById) { module.exports.getCarInfoById = getCarInfoById }
+  if (getCarInfoByd) { module.exports.getCarInfoByd = getCarInfoByd }
   if (sortCarInventory) { module.exports.sortCarInventory = sortCarInventory }
   if (getModelYears) { module.exports.getModelYears = getModelYears }
   if (getOlderCars) { module.exports.getOlderCars = getOlderCars }
